@@ -1,11 +1,9 @@
+import { Injectable } from '@nestjs/common';
 import { DogRepository } from './dog.repository';
 
+@Injectable()
 export class DogService {
-  dogRepository: DogRepository;
-
-  constructor() {
-    this.dogRepository = new DogRepository();
-  }
+  constructor(public dogRepository: DogRepository) {}
 
   findOne(id: string) {
     return this.dogRepository.findOne(id);

@@ -11,11 +11,7 @@ import { DogService } from './dog.service';
 
 @Controller('dog')
 export class DogController {
-  dogService: DogService;
-
-  constructor() {
-    this.dogService = new DogService();
-  }
+  constructor(public dogService: DogService) {}
 
   @Get()
   listDogs() {
